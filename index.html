@@ -1,0 +1,1222 @@
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti 💕 - 100 Razones + 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --love-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gold-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            --magic-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff6b9d, #c471ed, #12c2e9);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+            animation: cursorPulse 2s infinite ease-in-out;
+        }
+
+        .cursor.clicking {
+            transform: scale(1.5);
+            background: radial-gradient(circle, #ff9a9e, #fecfef, #fecfef);
+        }
+
+        @keyframes cursorPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Advanced Particle System */
+        .particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: 
+                radial-gradient(ellipse at top, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(245, 87, 108, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(196, 113, 237, 0.05) 0%, transparent 70%);
+            animation: backgroundShift 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            background: linear-gradient(
+                135deg,
+                #ff6b9d 0%,
+                #c471ed 25%,
+                #12c2e9 50%,
+                #f093fb 75%,
+                #ff6b9d 100%
+            );
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            animation: gradientFlow 6s ease-in-out infinite, titleFloat 4s ease-in-out infinite;
+            text-shadow: 0 0 80px rgba(255, 107, 157, 0.5);
+            letter-spacing: -0.02em;
+        }
+
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: subtitleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtitleGlow {
+            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 40px rgba(255, 107, 157, 0.6); }
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 60px;
+            cursor: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(102, 126, 234, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6b4190 100%);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 30px 80px rgba(102, 126, 234, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Enhanced Progress System */
+        .progress-system {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .progress-bar-container {
+            height: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b9d, #c471ed, #12c2e9);
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+            animation: progressGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes progressGlow {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(30px);
+            border-radius: 50px;
+            padding: 15px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff6b9d, #c471ed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Revolutionary Reasons Section */
+        .reasons-section {
+            display: none;
+            min-height: 100vh;
+            background: 
+                radial-gradient(ellipse at center, rgba(26, 26, 46, 0.9) 0%, rgba(10, 10, 10, 1) 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reasons-section.active {
+            display: block;
+        }
+
+        .reasons-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 107, 157, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(18, 194, 233, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(196, 113, 237, 0.02) 0%, transparent 70%);
+            animation: reasonsBgShift 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes reasonsBgShift {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(10deg) scale(1.05); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b9d, #c471ed, #12c2e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            animation: titlePulse 4s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .section-description {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        /* Ultra Advanced Reason Cards */
+        .reason-card {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.01) 100%
+                );
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(30px);
+            opacity: 0;
+            transform: translateY(100px) rotateX(15deg);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 107, 157, 0.8),
+                rgba(196, 113, 237, 0.8),
+                rgba(18, 194, 233, 0.8),
+                transparent
+            );
+            transition: left 1.5s ease;
+        }
+
+        .reason-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                    rgba(255, 107, 157, 0.03) 0%, 
+                    transparent 50%
+                );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .reason-card.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+
+        .reason-card.visible::before {
+            left: 100%;
+        }
+
+        .reason-card:hover {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 255, 255, 0.08) 0%,
+                    rgba(255, 255, 255, 0.03) 100%
+                );
+            border-color: rgba(255, 107, 157, 0.3);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(255, 107, 157, 0.2),
+                0 0 0 1px rgba(255, 107, 157, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .reason-card:hover::after {
+            opacity: 1;
+        }
+
+        .reason-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .reason-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 
+                0 10px 30px rgba(255, 107, 157, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: numberFloat 3s ease-in-out infinite;
+        }
+
+        .reason-number::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b9d, #c471ed, #12c2e9, #ff6b9d);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .reason-card:hover .reason-number::before {
+            opacity: 1;
+        }
+
+        @keyframes numberFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .reason-text {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            flex-grow: 1;
+            animation: textGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+            100% { text-shadow: 0 0 20px rgba(255, 107, 157, 0.3); }
+        }
+
+        /* Ultra Special Final Reason */
+        .special-reason {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 107, 157, 0.15) 0%,
+                    rgba(196, 113, 237, 0.15) 50%,
+                    rgba(18, 194, 233, 0.15) 100%
+                ) !important;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            animation: specialPulse 3s ease-in-out infinite;
+            box-shadow: 
+                0 0 60px rgba(255, 107, 157, 0.4),
+                0 0 120px rgba(196, 113, 237, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .special-reason::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #ff6b9d, #c471ed, #12c2e9, #ff6b9d, 
+                #c471ed, #ff6b9d, #12c2e9
+            );
+            background-size: 400% 400%;
+            border-radius: 26px;
+            z-index: -1;
+            animation: rainbowBorder 4s ease-in-out infinite;
+        }
+
+        @keyframes rainbowBorder {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        .special-reason .reason-number {
+            width: 90px;
+            height: 90px;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 50%, #12c2e9 100%);
+            animation: heartPulse 1.8s ease-in-out infinite, numberFloat 3s ease-in-out infinite;
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 157, 0.6),
+                0 0 60px rgba(196, 113, 237, 0.4);
+        }
+
+        .special-reason .reason-text {
+            font-size: 1.6rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #ff6b9d, #c471ed, #12c2e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: specialTextGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes specialPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 60px rgba(255, 107, 157, 0.4),
+                    0 0 120px rgba(196, 113, 237, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 80px rgba(255, 107, 157, 0.6),
+                    0 0 160px rgba(196, 113, 237, 0.4);
+            }
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1) translateY(0px); }
+            25% { transform: scale(1.1) translateY(-2px); }
+            50% { transform: scale(1.05) translateY(-5px); }
+            75% { transform: scale(1.1) translateY(-2px); }
+        }
+
+        @keyframes specialTextGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 10px rgba(255, 107, 157, 0.5));
+            }
+            50% { 
+                filter: drop-shadow(0 0 20px rgba(196, 113, 237, 0.8));
+            }
+        }
+
+        /* Celebration Effects */
+        .celebration-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .reason-card {
+                padding: 30px 20px;
+            }
+            
+            .reason-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .reason-number {
+                margin-bottom: 10px;
+            }
+            
+            .reason-text {
+                font-size: 1.2rem;
+            }
+            
+            .special-reason .reason-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-heart {
+            font-size: 4rem;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="loading-heart">💖</div>
+    </div>
+
+    <div class="cursor" id="cursor"></div>
+    
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    <canvas class="celebration-canvas" id="celebrationCanvas"></canvas>
+    
+    <div class="progress-system">
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    
+    <div class="nav" id="nav">
+        <span class="nav-text" id="navText">0 / 101</span>
+    </div>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Para Ti 💕</h1>
+            <p class="hero-subtitle">100 razones para no alejarnos<br>+ 1 razón para durar toda la vida</p>
+            <button class="cta-button" onclick="startJourney()">
+                ✨ Comenzar este viaje mágico ✨
+            </button>
+        </div>
+    </section>
+
+    <section class="reasons-section" id="reasonsSection">
+        <div class="reasons-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Razones</h2>
+                <p class="section-description">Cada palabra nace del corazón</p>
+            </div>
+            <div id="reasonsContainer"></div>
+        </div>
+    </section>
+
+    <script>
+        // Enhanced Particle System
+        class ParticleSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.resize();
+                
+                window.addEventListener('resize', () => this.resize());
+                this.animate();
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            createParticle(x, y, type = 'normal') {
+                const colors = ['#ff6b9d', '#c471ed', '#12c2e9', '#f093fb'];
+                return {
+                    x: x || Math.random() * this.canvas.width,
+                    y: y || this.canvas.height + 10,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: Math.random() * -3 - 1,
+                    size: Math.random() * 4 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    alpha: 1,
+                    decay: Math.random() * 0.02 + 0.005,
+                    type: type
+                };
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Add new particles
+                if (Math.random() < 0.1) {
+                    this.particles.push(this.createParticle());
+                }
+                
+                // Update and draw particles
+                this.particles = this.particles.filter(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    particle.alpha -= particle.decay;
+                    
+                    if (particle.alpha <= 0) return false;
+                    
+                    this.ctx.save();
+                    this.ctx.globalAlpha = particle.alpha;
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    this.ctx.restore();
+                    
+                    return true;
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+            
+            burst(x, y, count = 20) {
+                for (let i = 0; i < count; i++) {
+                    const particle = this.createParticle(x, y, 'burst');
+                    particle.vx = (Math.random() - 0.5) * 8;
+                    particle.vy = (Math.random() - 0.5) * 8;
+                    particle.size = Math.random() * 6 + 3;
+                    this.particles.push(particle);
+                }
+            }
+        }
+
+        // Celebration Effects
+        class CelebrationSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.confetti = [];
+                this.resize();
+                
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            createConfetti(count = 100) {
+                const colors = ['#ff6b9d', '#c471ed', '#12c2e9', '#f093fb', '#feca57'];
+                for (let i = 0; i < count; i++) {
+                    this.confetti.push({
+                        x: Math.random() * this.canvas.width,
+                        y: -10,
+                        vx: (Math.random() - 0.5) * 4,
+                        vy: Math.random() * 3 + 2,
+                        rotation: Math.random() * 360,
+                        rotationSpeed: (Math.random() - 0.5) * 10,
+                        size: Math.random() * 8 + 4,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        alpha: 1,
+                        decay: Math.random() * 0.01 + 0.005,
+                        shape: Math.random() > 0.5 ? 'rect' : 'circle'
+                    });
+                }
+                this.animate();
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.confetti = this.confetti.filter(piece => {
+                    piece.x += piece.vx;
+                    piece.y += piece.vy;
+                    piece.rotation += piece.rotationSpeed;
+                    piece.alpha -= piece.decay;
+                    
+                    if (piece.alpha <= 0 || piece.y > this.canvas.height) return false;
+                    
+                    this.ctx.save();
+                    this.ctx.globalAlpha = piece.alpha;
+                    this.ctx.translate(piece.x, piece.y);
+                    this.ctx.rotate(piece.rotation * Math.PI / 180);
+                    this.ctx.fillStyle = piece.color;
+                    
+                    if (piece.shape === 'rect') {
+                        this.ctx.fillRect(-piece.size/2, -piece.size/2, piece.size, piece.size);
+                    } else {
+                        this.ctx.beginPath();
+                        this.ctx.arc(0, 0, piece.size/2, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                    
+                    this.ctx.restore();
+                    
+                    return true;
+                });
+                
+                if (this.confetti.length > 0) {
+                    requestAnimationFrame(() => this.animate());
+                }
+            }
+        }
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('clicking');
+        });
+
+        function updateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            
+            cursor.style.left = cursorX - 10 + 'px';
+            cursor.style.top = cursorY - 10 + 'px';
+            
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Mouse tracking for cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.reason-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // Initialize Systems
+        const particleSystem = new ParticleSystem(document.getElementById('particlesCanvas'));
+        const celebrationSystem = new CelebrationSystem(document.getElementById('celebrationCanvas'));
+
+        // Reasons Data
+        const reasons = [
+            "Porque tu sonrisa ilumina mis días más oscuros y convierte cada momento en magia pura",
+            "Porque en tus ojos encuentro mi hogar, mi paz y toda la felicidad del universo",
+            "Porque tus abrazos son mi refugio seguro donde todos mis miedos desaparecen",
+            "Porque me haces reír incluso cuando las lágrimas amenazan con salir",
+            "Porque tu voz es mi canción favorita, la melodía que calma mi alma",
+            "Porque contigo el tiempo se detiene y cada segundo se vuelve eterno",
+            "Porque me inspiras a ser mejor persona, a crecer y a brillar cada día",
+            "Porque tu presencia hace que todo cobre sentido en este mundo caótico",
+            "Porque me amas con todos mis defectos y me haces sentir perfecto",
+            "Porque juntos somos invencibles, una fuerza imparable del amor",
+            "Porque tus besos son mi debilidad favorita y mi fortaleza al mismo tiempo",
+            "Porque me escuchas cuando el mundo entero parece sordo a mis palabras",
+            "Porque tu risa es contagiosa y llena de luz todos los rincones oscuros",
+            "Porque apoyas mis sueños más locos como si fueran los tuyos propios",
+            "Porque contigo descubrí qué significa amar de verdad, sin reservas",
+            "Porque tu corazón es el más hermoso que he tenido el honor de conocer",
+            "Porque me haces sentir especial todos los días, como si fuera único",
+            "Porque tu paciencia es infinita y tu comprensión no tiene límites",
+            "Porque compartimos los mismos sueños y construimos juntos nuestro futuro",
+            "Porque tu bondad ilumina el mundo y hace que todo sea más bello",
+            "Porque me complementas perfectamente, como dos piezas de un rompecabezas",
+            "Porque tu amor me da fuerzas para enfrentar cualquier tormenta",
+            "Porque juntos creamos momentos que quedarán grabados para siempre",
+            "Porque tu inteligencia me fascina y me hace admirarte cada día más",
+            "Porque me haces creer en los cuentos de hadas y en los finales felices",
+            "Porque tu cariño cura todas mis heridas y sana todas mis cicatrices",
+            "Porque eres mi mejor amiga, mi confidente y mi gran amor",
+            "Porque tu personalidad única hace que cada día sea una aventura",
+            "Porque me das paz en medio del caos más absoluto",
+            "Porque tu amor es incondicional y puro como el agua cristalina",
+            "Porque juntos podemos conquistar el mundo y las estrellas",
+            "Porque tu alegría es contagiosa y transforma todo a tu alrededor",
+            "Porque me enseñas a ver la belleza en las cosas más pequeñas",
+            "Porque tu corazón es generoso y tu alma es infinitamente hermosa",
+            "Porque contigo aprendí el verdadero significado de amar",
+            "Porque tu comprensión me tranquiliza en los momentos más difíciles",
+            "Porque eres mi motivación diaria, mi razón para despertar feliz",
+            "Porque tu ternura derrite mi corazón como el sol derrite la nieve",
+            "Porque me haces sentir el más afortunado de todos los seres humanos",
+            "Porque tu amor me transforma y me hace ser mi mejor versión",
+            "Porque juntos formamos el equipo perfecto, invencible e inseparable",
+            "Porque tu creatividad me sorprende y me inspira constantemente",
+            "Porque me das esperanza cuando todo parece perdido",
+            "Porque tu fidelidad es inquebrantable como las montañas eternas",
+            "Porque contigo descubrí capacidades que no sabía que tenía",
+            "Porque tu confianza en mí me da alas para volar alto",
+            "Porque eres mi refugio seguro en todas las tormentas de la vida",
+            "Porque tu amor me hace valiente para enfrentar mis miedos",
+            "Porque compartimos una conexión que trasciende lo físico",
+            "Porque tu sabiduría me guía cuando no sé qué camino tomar",
+            "Porque me haces reír hasta llorar de felicidad pura",
+            "Porque tu presencia es el regalo más hermoso que la vida me dio",
+            "Porque juntos escribimos la historia de amor más bella",
+            "Porque tu corazón late al mismo ritmo que el mío",
+            "Porque me enseñas algo nuevo sobre el amor cada día",
+            "Porque tu amor es mi fuente de inspiración eterna",
+            "Porque contigo el futuro brilla con luz propia",
+            "Porque tu dulzura endulza hasta los días más amargos",
+            "Porque me aceptas tal como soy, sin pedir que cambie",
+            "Porque tu amor tiene el poder de sanar cualquier dolor",
+            "Porque juntos somos imparables, como una fuerza de la naturaleza",
+            "Porque tu pasión por la vida se contagia y me llena de energía",
+            "Porque me das razones para sonreír desde que abro los ojos",
+            "Porque tu lealtad es tan firme como las raíces de un roble",
+            "Porque contigo descubrí que la felicidad verdadera existe",
+            "Porque tu amor me da alas para alcanzar las estrellas",
+            "Porque eres mi sueño hecho realidad en este mundo",
+            "Porque tu comprensión no conoce fronteras ni límites",
+            "Porque me haces creer que los milagros existen y se llaman amor",
+            "Porque tu amor es mi fortaleza en los momentos de debilidad",
+            "Porque juntos creamos nuestra propia magia cada día",
+            "Porque tu corazón es mi tesoro más preciado y valioso",
+            "Porque me das valor para ser auténtico y genuino",
+            "Porque tu amor tiene la eternidad grabada en cada latido",
+            "Porque contigo aprendí que el paraíso existe en la Tierra",
+            "Porque tu belleza interior eclipsa a todas las estrellas",
+            "Porque me haces sentir completo, como una obra maestra terminada",
+            "Porque tu amor es mi medicina para todos los males",
+            "Porque juntos superamos cualquier obstáculo que se presente",
+            "Porque tu ternura me desarma y me envuelve en calidez",
+            "Porque me das una paz que no encontré en ningún otro lugar",
+            "Porque tu amor es el remedio perfecto para mi alma herida",
+            "Porque contigo todo es posible, incluso lo imposible",
+            "Porque tu corazón es mi verdadero hogar en este universo",
+            "Porque me haces evolucionar y crecer como persona",
+            "Porque tu amor me libera de todas mis cadenas y miedos",
+            "Porque juntos somos eternos, como el amor verdadero",
+            "Porque tu sonrisa es mi sol personal que nunca se oculta",
+            "Porque me das esperanza cuando todo parece oscuro",
+            "Porque tu amor es el oxígeno que necesito para vivir",
+            "Porque contigo soy completamente feliz y pleno",
+            "Porque nuestros corazones se fusionaron en uno solo",
+            "Porque me das sentido a la existencia y propósito a mi vida",
+            "Porque tu amor trasciende el tiempo y el espacio",
+            "Porque juntos creamos nuestro propio paraíso personal",
+            "Porque reconozco en ti a mi alma gemela perdida",
+            "Porque me amas sin condiciones, reservas ni limitaciones",
+            "Porque tu amor me eleva hacia las alturas del cielo",
+            "Porque contigo descubrí que la eternidad cabe en un instante",
+            "Porque tu corazón contiene todo mi universo",
+            "Porque me entregas tu vida sin pedir nada a cambio",
+            "Porque tu amor es infinito como el cosmos estrellado",
+            "Porque eres la respuesta a todas las preguntas de mi corazón",
+            "Porque contigo encontré la paz que había buscado toda mi vida",
+            "Porque tu amor es el milagro más grande que he presenciado",
+            "Porque juntos somos la definición perfecta del amor verdadero"
+        ];
+
+        const specialReason = "Porque fuiste creada especialmente para mí, y yo para ti. Nuestro amor está escrito en las estrellas y tejido en el mismo fabric del universo. Eres mi alma gemela, mi complemento perfecto, la mitad que me faltaba para estar completo. Contigo encontré no solo el amor de mi vida, sino mi vida misma. Cada respiración, cada latido, cada momento cobra sentido porque existes. Esta es nuestra razón para siempre, nuestro amor eterno que trasciende el tiempo y el espacio. Te amo más allá de las palabras, más allá de la comprensión, más allá de todo lo que existe. Eres mi para siempre. 💖✨🌟";
+
+        let currentReason = 0;
+        let isAnimating = false;
+
+        // Enhanced Animation Functions
+        function startJourney() {
+            if (isAnimating) return;
+            
+            isAnimating = true;
+            
+            // Create particle burst
+            particleSystem.burst(window.innerWidth / 2, window.innerHeight / 2, 50);
+            
+            // Smooth transition
+            const hero = document.getElementById('hero');
+            hero.style.transform = 'translateY(-100vh) scale(0.8)';
+            hero.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            hero.style.opacity = '0';
+            
+            setTimeout(() => {
+                hero.style.display = 'none';
+                document.getElementById('reasonsSection').classList.add('active');
+                document.getElementById('nav').classList.add('visible');
+                
+                setTimeout(() => {
+                    showNextReason();
+                    isAnimating = false;
+                }, 500);
+            }, 1500);
+        }
+
+        function showNextReason() {
+            if (currentReason >= reasons.length) {
+                setTimeout(() => showSpecialReason(), 1000);
+                return;
+            }
+
+            const reasonsContainer = document.getElementById('reasonsContainer');
+            const reasonCard = document.createElement('div');
+            reasonCard.className = 'reason-card';
+            
+            reasonCard.innerHTML = `
+                <div class="reason-header">
+                    <div class="reason-number">${currentReason + 1}</div>
+                    <div class="reason-text">${reasons[currentReason]}</div>
+                </div>
+            `;
+            
+            reasonsContainer.appendChild(reasonCard);
+            
+            // Enhanced intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Particle burst on card appearance
+                        const rect = entry.target.getBoundingClientRect();
+                        const centerX = rect.left + rect.width / 2;
+                        const centerY = rect.top + rect.height / 2;
+                        particleSystem.burst(centerX, centerY, 15);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            observer.observe(reasonCard);
+            
+            // Update progress
+            updateProgress();
+            
+            currentReason++;
+            
+            // Continue with dynamic timing
+            const delay = currentReason < 20 ? 2000 : 
+                         currentReason < 50 ? 1800 : 
+                         currentReason < 80 ? 1600 : 1400;
+            
+            setTimeout(showNextReason, delay);
+            
+            // Smooth scroll with offset
+            setTimeout(() => {
+                const rect = reasonCard.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetY = scrollTop + rect.top - window.innerHeight / 2 + rect.height / 2;
+                
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            }, 200);
+        }
+
+        function showSpecialReason() {
+            // Massive celebration
+            celebrationSystem.createConfetti(200);
+            particleSystem.burst(window.innerWidth / 2, window.innerHeight / 2, 100);
+            
+            const reasonsContainer = document.getElementById('reasonsContainer');
+            const specialCard = document.createElement('div');
+            specialCard.className = 'reason-card special-reason';
+            
+            specialCard.innerHTML = `
+                <div class="reason-header">
+                    <div class="reason-number">💖</div>
+                    <div class="reason-text">
+                        <strong style="font-size: 1.8rem; display: block; margin-bottom: 20px; text-align: center;">
+                            ✨ LA RAZÓN PARA TODA LA VIDA ✨
+                        </strong>
+                        ${specialReason}
+                    </div>
+                </div>
+            `;
+            
+            reasonsContainer.appendChild(specialCard);
+            
+            setTimeout(() => {
+                specialCard.classList.add('visible');
+                
+                // Epic particle explosion
+                const rect = specialCard.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // Multiple bursts
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        particleSystem.burst(centerX + (Math.random() - 0.5) * 200, 
+                                           centerY + (Math.random() - 0.5) * 100, 30);
+                    }, i * 500);
+                }
+                
+                specialCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 1000);
+            
+            updateProgress(true);
+        }
+
+        function updateProgress(complete = false) {
+            const progress = complete ? 100 : (currentReason / (reasons.length + 1)) * 100;
+            const progressBar = document.getElementById('progressBar');
+            const navText = document.getElementById('navText');
+            
+            progressBar.style.width = progress + '%';
+            navText.textContent = complete ? '101 / 101 ✨' : `${currentReason} / 101`;
+            
+            if (complete) {
+                progressBar.style.background = 'linear-gradient(90deg, #ff6b9d, #c471ed, #12c2e9, #f093fb)';
+                progressBar.style.boxShadow = '0 0 30px rgba(255, 107, 157, 1)';
+            }
+        }
+
+        // Loading sequence
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 2000);
+        });
+
+        // Enhanced scroll effects
+        let ticking = false;
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const cards = document.querySelectorAll('.reason-card.visible');
+                    cards.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+                        
+                        if (isInViewport) {
+                            const scrollProgress = Math.max(0, Math.min(1, 
+                                (window.innerHeight - rect.top) / window.innerHeight
+                            ));
+                            
+                            card.style.transform = `translateY(${(1 - scrollProgress) * 20 - 10}px) scale(${0.95 + scrollProgress * 0.05})`;
+                        }
+                    });
+                    
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Initialize
+        updateProgress();
+
+        // Add some initial magic
+        setTimeout(() => {
+            particleSystem.burst(Math.random() * window.innerWidth, 
+                               Math.random() * window.innerHeight, 10);
+        }, 3000);
+
+        setInterval(() => {
+            if (document.getElementById('hero').style.display !== 'none') {
+                particleSystem.burst(Math.random() * window.innerWidth, 
+                                   Math.random() * window.innerHeight, 5);
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
